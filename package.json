@@ -39,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "packageManager": "yarn@3.2.0",
+  "devDependencies": {
+    "@yarnpkg/sdks": "^3.0.0-rc.2"
   }
 }
