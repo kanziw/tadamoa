@@ -11,7 +11,8 @@ const styles: Record<string, CSSProperties> = {
   button: {
     padding: '1.5em 3em',
     background: '#FF7E36',
-    fontSize: 'x-large'
+    fontSize: 'x-large',
+    borderRadius: '1.5em'
   },
   score: {
     fontSize: 'small',
