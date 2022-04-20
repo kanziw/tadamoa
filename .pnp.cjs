@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.13.0"],\
             ["eslint-plugin-react", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:7.29.4"],\
             ["react", "npm:18.0.0"],\
+            ["react-canvas-confetti", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:1.3.0"],\
             ["react-dom", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:18.0.0"],\
             ["react-scripts", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:5.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"],\
@@ -3969,6 +3970,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/canvas-confetti", [\
+        ["npm:1.4.2", {\
+          "packageLocation": "./.yarn/cache/@types-canvas-confetti-npm-1.4.2-851512a9e6-68327c85be.zip/node_modules/@types/canvas-confetti/",\
+          "packageDependencies": [\
+            ["@types/canvas-confetti", "npm:1.4.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/connect", [\
         ["npm:3.4.35", {\
           "packageLocation": "./.yarn/cache/@types-connect-npm-3.4.35-7337eee0a3-fe81351470.zip/node_modules/@types/connect/",\
@@ -6161,6 +6171,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/caniuse-lite-npm-1.0.30001332-48584c6396-e54182ea42.zip/node_modules/caniuse-lite/",\
           "packageDependencies": [\
             ["caniuse-lite", "npm:1.0.30001332"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["canvas-confetti", [\
+        ["npm:1.5.1", {\
+          "packageLocation": "./.yarn/cache/canvas-confetti-npm-1.5.1-7bf181602f-e5932e3426.zip/node_modules/canvas-confetti/",\
+          "packageDependencies": [\
+            ["canvas-confetti", "npm:1.5.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14131,6 +14150,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-canvas-confetti", [\
+        ["npm:1.3.0", {\
+          "packageLocation": "./.yarn/cache/react-canvas-confetti-npm-1.3.0-eac4208873-95a50e5c1e.zip/node_modules/react-canvas-confetti/",\
+          "packageDependencies": [\
+            ["react-canvas-confetti", "npm:1.3.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:1.3.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-canvas-confetti-virtual-b7d6c01ebd/0/cache/react-canvas-confetti-npm-1.3.0-eac4208873-95a50e5c1e.zip/node_modules/react-canvas-confetti/",\
+          "packageDependencies": [\
+            ["react-canvas-confetti", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:1.3.0"],\
+            ["@types/canvas-confetti", "npm:1.4.2"],\
+            ["@types/react", "npm:18.0.5"],\
+            ["canvas-confetti", "npm:1.5.1"],\
+            ["react", "npm:18.0.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-dev-utils", [\
         ["npm:12.0.1", {\
           "packageLocation": "./.yarn/cache/react-dev-utils-npm-12.0.1-83ba06e3ee-2c6917e47f.zip/node_modules/react-dev-utils/",\
@@ -15637,6 +15680,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.13.0"],\
             ["eslint-plugin-react", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:7.29.4"],\
             ["react", "npm:18.0.0"],\
+            ["react-canvas-confetti", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:1.3.0"],\
             ["react-dom", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:18.0.0"],\
             ["react-scripts", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:5.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"],\

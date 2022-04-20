@@ -2373,6 +2373,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/canvas-confetti@npm:1.4.2":
+  version: 1.4.2
+  resolution: "@types/canvas-confetti@npm:1.4.2"
+  checksum: 68327c85bec9f507a8002bf7bc57d8e1850816e91460c8d0c340ae7a06a782839c016b82e5b4adf5ff52fe96af94853c9a25e17bd317524d377ccdc0e00e8d9c
+  languageName: node
+  linkType: hard
+
 "@types/connect-history-api-fallback@npm:^1.3.5":
   version: 1.3.5
   resolution: "@types/connect-history-api-fallback@npm:1.3.5"
@@ -4091,6 +4098,13 @@ __metadata:
   version: 1.0.30001332
   resolution: "caniuse-lite@npm:1.0.30001332"
   checksum: e54182ea42ab3d2ff1440f9a6480292f7ab23c00c188df7ad65586312e4da567e8bedd5cb5fb8f0ff4193dc027a54e17e0b3c0b6db5d5a3fb61c7726ff9c45b3
+  languageName: node
+  linkType: hard
+
+"canvas-confetti@npm:1.5.1":
+  version: 1.5.1
+  resolution: "canvas-confetti@npm:1.5.1"
+  checksum: e5932e34261615d629aac24aebad0472dd01c6cc3a3d6460ef37ab81eb533a2fdcec1cd842fcad6275f907fe378fc71cc90c91e1f997df63b0865ec2d5783ad8
   languageName: node
   linkType: hard
 
@@ -10198,6 +10212,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-canvas-confetti@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "react-canvas-confetti@npm:1.3.0"
+  dependencies:
+    "@types/canvas-confetti": 1.4.2
+    canvas-confetti: 1.5.1
+  peerDependencies:
+    react: "*"
+  checksum: 95a50e5c1e57f04d3b6bdc15e3bdba87cb005273b37f614daa8f19e3dafb0fdd6feb1b9966e7de1061706befe8183bf9343dfc48ce4823bb3263aa5f0f63bc2b
+  languageName: node
+  linkType: hard
+
 "react-dev-utils@npm:^12.0.1":
   version: 12.0.1
   resolution: "react-dev-utils@npm:12.0.1"
@@ -11533,6 +11559,7 @@ __metadata:
     eslint: ^8.13.0
     eslint-plugin-react: ^7.29.4
     react: ^18.0.0
+    react-canvas-confetti: ^1.3.0
     react-dom: ^18.0.0
     react-scripts: 5.0.1
     typescript: ^4.4.2
