@@ -1,4 +1,4 @@
-import React, { CSSProperties, useCallback, useRef, useState } from 'react'
+import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import ReactCanvasConfetti from 'react-canvas-confetti'
 
 const styles: Record<string, CSSProperties> = {
@@ -31,12 +31,15 @@ type Instance = any
 
 const App = () => {
   const [score, setScore] = useState(0)
+  const [intervalId, setIntervalId] = useState<null | NodeJS.Timer>(null)
 
+  // Prepare Confetti Instance
   const refAnimationInstance = useRef<null | Instance>(null)
   const getInstance = useCallback((instance: Instance) => {
     refAnimationInstance.current = instance
   }, [])
 
+  // One Fire Shot
   const makeShot = useCallback((particleRatio: number, opts: Record<string, unknown>) => {
     refAnimationInstance.current &&
       refAnimationInstance.current({
@@ -74,12 +77,44 @@ const App = () => {
       startVelocity: 45
     })
 
-    setScore(score + 1)
   }, [makeShot])
+
+  // Fanfare
+  const nextTickAnimation = useCallback(() => {
+    if (refAnimationInstance.current) {
+      refAnimationInstance.current(getAnimationSettings(0.1, 0.3))
+      refAnimationInstance.current(getAnimationSettings(0.7, 0.9))
+    }
+  }, [])
+
+  const startAnimation = useCallback(() => {
+    if (!intervalId) {
+      setIntervalId(setInterval(nextTickAnimation, 400))
+    }
+  }, [intervalId, nextTickAnimation])
+
+  const pauseAnimation = useCallback(() => {
+    if (intervalId){
+      clearInterval(intervalId)
+    }
+    setIntervalId(null)
+  }, [intervalId])
+
   const onClick = () => {
     setScore(score + 1)
-    fire()
+
+    if ((score + 1) % 10 === 0) {
+      startAnimation()
+      setTimeout(pauseAnimation, 2000)
+    } else {
+      fire()
+    }
   }
+
+  useEffect(
+    () => (() => { intervalId && clearInterval(intervalId) }),
+    [intervalId]
+  )
 
   return(
     <>
@@ -95,6 +130,24 @@ const App = () => {
       </div>
     </>
   )
+}
+
+function randomInRange(min: number, max: number) {
+  return Math.random() * (max - min) + min
+}
+
+function getAnimationSettings(originXA: number, originXB: number) {
+  return {
+    startVelocity: 30,
+    spread: 360,
+    ticks: 60,
+    zIndex: 0,
+    particleCount: 150,
+    origin: {
+      x: randomInRange(originXA, originXB),
+      y: Math.random() - 0.2
+    }
+  }
 }
 
 export default App
