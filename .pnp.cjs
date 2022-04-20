@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.4"],\
             ["@testing-library/react", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:13.1.1"],\
             ["@testing-library/user-event", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:13.5.0"],\
+            ["@types/canvas-confetti", "npm:1.4.2"],\
             ["@types/jest", "npm:27.4.1"],\
             ["@types/node", "npm:16.11.27"],\
             ["@types/react", "npm:18.0.5"],\
@@ -15670,6 +15671,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.4"],\
             ["@testing-library/react", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:13.1.1"],\
             ["@testing-library/user-event", "virtual:12e706a018469cae99a3a09a7ef2703871beb283d376d5e14fcbf48856d0236886086d3cbcfa8611af80d5792f2c21cc3d6ba17b8e58a9e466c3c1ead28d2d86#npm:13.5.0"],\
+            ["@types/canvas-confetti", "npm:1.4.2"],\
             ["@types/jest", "npm:27.4.1"],\
             ["@types/node", "npm:16.11.27"],\
             ["@types/react", "npm:18.0.5"],\

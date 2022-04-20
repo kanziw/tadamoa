@@ -1,5 +1,6 @@
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import ReactCanvasConfetti from 'react-canvas-confetti'
+import type { CreateTypes } from 'canvas-confetti'
 
 const styles: Record<string, CSSProperties> = {
   wrapper: {
@@ -28,15 +29,15 @@ const styles: Record<string, CSSProperties> = {
   },
 }
 
-type Instance = any
+type ConfettiInstance = CreateTypes | null
 
 const App = () => {
   const [score, setScore] = useState(0)
   const [intervalId, setIntervalId] = useState<null | NodeJS.Timer>(null)
 
   // Prepare Confetti Instance
-  const refAnimationInstance = useRef<null | Instance>(null)
-  const getInstance = useCallback((instance: Instance) => {
+  const refAnimationInstance = useRef<ConfettiInstance>(null)
+  const getInstance = useCallback((instance: ConfettiInstance) => {
     refAnimationInstance.current = instance
   }, [])
 
