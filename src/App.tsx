@@ -3,6 +3,13 @@ import ReactCanvasConfetti from 'react-canvas-confetti'
 import type { CreateTypes } from 'canvas-confetti'
 
 const styles: Record<string, CSSProperties> = {
+  close: {
+    position: 'absolute',
+    right: '0',
+    margin: '0.5em 1em',
+    fontSize: '2em',
+    color: '#F6F6F6'
+  },
   wrapper: {
     display: 'grid',
     placeItems: 'center',
@@ -118,9 +125,14 @@ const App = () => {
     [intervalId]
   )
 
+  const onClose = () => {
+    console.log('')
+  }
+
   return(
     <>
       <ReactCanvasConfetti refConfetti={getInstance} style={styles.confetti} />
+      <div style={styles.close}><span onClick={onClose}>×</span></div>
       <div style={styles.wrapper}>
         <div
           style={styles.button}
