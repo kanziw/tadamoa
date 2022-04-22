@@ -1,15 +1,20 @@
+import './index.css'
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+import Mini from '@karrotmarket/mini'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
+
+const mini = new Mini()
+
 root.render(
   <React.StrictMode>
-    <App />
+    <App closeMini={() => mini.close()} />
   </React.StrictMode>
 )
 

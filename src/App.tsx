@@ -38,7 +38,7 @@ const styles: Record<string, CSSProperties> = {
 
 type ConfettiInstance = CreateTypes | null
 
-const App = () => {
+const App = ({ closeMini }: { closeMini: () => void }) => {
   const [score, setScore] = useState(0)
   const [intervalId, setIntervalId] = useState<null | NodeJS.Timer>(null)
 
@@ -126,7 +126,7 @@ const App = () => {
   )
 
   const onClose = () => {
-    console.log('')
+    closeMini()
   }
 
   return(
