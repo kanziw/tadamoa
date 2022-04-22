@@ -3,6 +3,13 @@ import ReactCanvasConfetti from 'react-canvas-confetti'
 import type { CreateTypes } from 'canvas-confetti'
 
 const styles: Record<string, CSSProperties> = {
+  close: {
+    position: 'absolute',
+    right: '0',
+    margin: '0.5em 1em',
+    fontSize: '2em',
+    color: '#F6F6F6'
+  },
   wrapper: {
     display: 'grid',
     placeItems: 'center',
@@ -31,7 +38,12 @@ const styles: Record<string, CSSProperties> = {
 
 type ConfettiInstance = CreateTypes | null
 
-const App = () => {
+type Props = {
+  closeMini(): void,
+  isOnNativeWebview: boolean,
+}
+
+const App = ({ closeMini, isOnNativeWebview }: Props) => {
   const [score, setScore] = useState(0)
   const [intervalId, setIntervalId] = useState<null | NodeJS.Timer>(null)
 
@@ -52,32 +64,11 @@ const App = () => {
   }, [])
 
   const fire = useCallback(() => {
-    makeShot(0.25, {
-      spread: 26,
-      startVelocity: 55
-    })
-
-    makeShot(0.2, {
-      spread: 60
-    })
-
-    makeShot(0.35, {
-      spread: 100,
-      decay: 0.91,
-      scalar: 0.8
-    })
-
-    makeShot(0.1, {
-      spread: 120,
-      startVelocity: 25,
-      decay: 0.92,
-      scalar: 1.2
-    })
-
-    makeShot(0.1, {
-      spread: 120,
-      startVelocity: 45
-    })
+    makeShot(0.25, { spread: 26, startVelocity: 55 })
+    makeShot(0.2, { spread: 60 })
+    makeShot(0.35, { spread: 100, decay: 0.91, scalar: 0.8 })
+    makeShot(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 })
+    makeShot(0.1, { spread: 120, startVelocity: 45 })
 
   }, [makeShot])
 
@@ -96,7 +87,7 @@ const App = () => {
   }, [intervalId, nextTickAnimation])
 
   const pauseAnimation = useCallback(() => {
-    if (intervalId){
+    if (intervalId) {
       clearInterval(intervalId)
     }
     setIntervalId(null)
@@ -118,9 +109,14 @@ const App = () => {
     [intervalId]
   )
 
+  const onClose = () => {
+    closeMini()
+  }
+
   return(
     <>
       <ReactCanvasConfetti refConfetti={getInstance} style={styles.confetti} />
+      {isOnNativeWebview && <div style={styles.close}><span onClick={onClose}>×</span></div>}
       <div style={styles.wrapper}>
         <div
           style={styles.button}
