@@ -14,7 +14,7 @@ const mini = new Mini()
 
 root.render(
   <React.StrictMode>
-    <App closeMini={() => mini.close()} />
+    <App closeMini={() => mini.close()} isOnNativeWebview={mini.environment !== 'Web'} />
   </React.StrictMode>
 )
 

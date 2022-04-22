@@ -38,7 +38,12 @@ const styles: Record<string, CSSProperties> = {
 
 type ConfettiInstance = CreateTypes | null
 
-const App = ({ closeMini }: { closeMini: () => void }) => {
+type Props = {
+  closeMini(): void,
+  isOnNativeWebview: boolean,
+}
+
+const App = ({ closeMini, isOnNativeWebview }: Props) => {
   const [score, setScore] = useState(0)
   const [intervalId, setIntervalId] = useState<null | NodeJS.Timer>(null)
 
@@ -132,7 +137,7 @@ const App = ({ closeMini }: { closeMini: () => void }) => {
   return(
     <>
       <ReactCanvasConfetti refConfetti={getInstance} style={styles.confetti} />
-      <div style={styles.close}><span onClick={onClose}>×</span></div>
+      {isOnNativeWebview && <div style={styles.close}><span onClick={onClose}>×</span></div>}
       <div style={styles.wrapper}>
         <div
           style={styles.button}
