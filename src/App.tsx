@@ -1,11 +1,8 @@
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import ReactCanvasConfetti from 'react-canvas-confetti'
 import type { CreateTypes } from 'canvas-confetti'
-import { Navigator } from '@karrotframe/navigator'
 
-type InlineStyle = Record<string, CSSProperties>;
-
-const styles: Record<string, CSSProperties | InlineStyle> = {
+const styles: Record<string, CSSProperties> = {
   wrapper: {
     display: 'grid',
     placeItems: 'center',
@@ -122,12 +119,7 @@ const App = () => {
   )
 
   return(
-    <Navigator
-      theme="Cupertino"
-      onClose={() => {
-        console.log('Close button is pressed')
-      }}
-    >
+    <>
       <ReactCanvasConfetti refConfetti={getInstance} style={styles.confetti} />
       <div style={styles.wrapper}>
         <div
@@ -138,7 +130,7 @@ const App = () => {
           <div style={styles.score}>(Score: {score})</div>
         </div>
       </div>
-    </Navigator>
+    </>
   )
 }
 
