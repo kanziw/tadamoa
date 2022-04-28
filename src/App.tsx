@@ -3,13 +3,6 @@ import ReactCanvasConfetti from 'react-canvas-confetti'
 import type { CreateTypes } from 'canvas-confetti'
 
 const styles: Record<string, CSSProperties> = {
-  close: {
-    position: 'absolute',
-    right: '0',
-    margin: '0.5em 1em',
-    fontSize: '2em',
-    color: '#F6F6F6'
-  },
   wrapper: {
     display: 'grid',
     placeItems: 'center',
@@ -38,12 +31,7 @@ const styles: Record<string, CSSProperties> = {
 
 type ConfettiInstance = CreateTypes | null
 
-type Props = {
-  closeMini(): void,
-  isOnNativeWebview: boolean,
-}
-
-const App = ({ closeMini, isOnNativeWebview }: Props) => {
+const App = () => {
   const [score, setScore] = useState(0)
   const [intervalId, setIntervalId] = useState<null | NodeJS.Timer>(null)
 
@@ -109,14 +97,9 @@ const App = ({ closeMini, isOnNativeWebview }: Props) => {
     [intervalId]
   )
 
-  const onClose = () => {
-    closeMini()
-  }
-
   return(
     <>
       <ReactCanvasConfetti refConfetti={getInstance} style={styles.confetti} />
-      {isOnNativeWebview && <div style={styles.close}><span onClick={onClose}>×</span></div>}
       <div style={styles.wrapper}>
         <div
           style={styles.button}

@@ -1,7 +1,9 @@
 import './index.css'
+import '@karrotframe/navigator/index.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Navigator, Screen, ScreenHelmet } from '@karrotframe/navigator'
 import Mini from '@karrotmarket/mini'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
@@ -11,10 +13,17 @@ const root = ReactDOM.createRoot(
 )
 
 const mini = new Mini()
+const isWeb = mini.environment === 'Web'
+const navBarHeight = '-2.75em'
 
 root.render(
   <React.StrictMode>
-    <App closeMini={() => mini.close()} isOnNativeWebview={mini.environment !== 'Web'} />
+    <Navigator theme="Cupertino" onClose={() => !isWeb && mini.close()}>
+      <Screen path='*'>
+        <ScreenHelmet closeButtonLocation='right' visible={!isWeb} />
+        <div style={{marginTop: isWeb ? '0' : navBarHeight}}> <App /> </div>
+      </Screen>
+    </Navigator>
   </React.StrictMode>
 )
 
