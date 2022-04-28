@@ -1,5 +1,5 @@
 import './index.css'
-import '@karrotframe/navigator/index.css'
+// import '@karrotframe/navigator/index.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -27,7 +27,22 @@ root.render(
     >
       {/* <Screen path="*" component={App} /> */}
       {/* <Screen path="/" component={App} /> */}
-      <App />
+      <Screen path='/'>
+        <div>
+          <ScreenHelmet
+            title="My App"
+            appendLeft={<div>Append to Left</div>}
+            appendRight={<div>Append to Right</div>}
+            customBackButton={<div>Back</div>}
+            customCloseButton={<div>Close</div>}
+            visible={false}
+            preventSwipeBack={true}
+            noBackButton={true}
+            noCloseButton={true}
+          />
+          <App />
+        </div>
+      </Screen>
     </Navigator>
   </React.StrictMode>
 )
