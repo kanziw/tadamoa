@@ -3,7 +3,7 @@
 
 /* https://shylog.com/settings-for-a-more-complete-webview/ */
 * {
-	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
 	user-select: none;
 
@@ -17,6 +17,10 @@
 	-webkit-touch-callout: initial;
 	-webkit-touch-callout: inherit;
 	-webkit-touch-callout: unset;
+}
+
+html, body, #root {
+    height: 100%;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

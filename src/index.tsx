@@ -1,5 +1,5 @@
 import './index.css'
-// import '@karrotframe/navigator/index.css'
+import '@karrotframe/navigator/index.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -13,33 +13,14 @@ const root = ReactDOM.createRoot(
 )
 
 const mini = new Mini()
+const isWeb = mini.environment === 'Web'
 
 root.render(
   <React.StrictMode>
-    <Navigator
-      theme="Cupertino"
-      onClose={() => {
-        console.log('Close button is pressed')
-        if (mini.environment !== 'Web') {
-          mini.close()
-        }
-      }}
-    >
-      {/* <Screen path="*" component={App} /> */}
-      {/* <Screen path="/" component={App} /> */}
-      <Screen path='/'>
+    <Navigator theme="Cupertino" onClose={() => !isWeb && mini.close()}>
+      <Screen path='*'>
         <div>
-          <ScreenHelmet
-            title="My App"
-            appendLeft={<div>Append to Left</div>}
-            appendRight={<div>Append to Right</div>}
-            customBackButton={<div>Back</div>}
-            customCloseButton={<div>Close</div>}
-            visible={false}
-            preventSwipeBack={true}
-            noBackButton={true}
-            noCloseButton={true}
-          />
+          <ScreenHelmet closeButtonLocation='right' visible={!isWeb} />
           <App />
         </div>
       </Screen>
