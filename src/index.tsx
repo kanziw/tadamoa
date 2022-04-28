@@ -14,15 +14,14 @@ const root = ReactDOM.createRoot(
 
 const mini = new Mini()
 const isWeb = mini.environment === 'Web'
+const navBarHeight = '-2.75em'
 
 root.render(
   <React.StrictMode>
     <Navigator theme="Cupertino" onClose={() => !isWeb && mini.close()}>
       <Screen path='*'>
-        <div>
-          <ScreenHelmet closeButtonLocation='right' visible={!isWeb} />
-          <App />
-        </div>
+        <ScreenHelmet closeButtonLocation='right' visible={!isWeb} />
+        <div style={{marginTop: isWeb ? '0' : navBarHeight}}> <App /> </div>
       </Screen>
     </Navigator>
   </React.StrictMode>
