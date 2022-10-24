@@ -33,5 +33,5 @@ jobs:
           body: |
             ## karrotmini deployment
 
-            Hello, I'm karrotmini. I'm going to deploy your PR to staging environment.
+            Hello, I'm karrotmini. {{ github.sha }}
           edit-mode: replace
