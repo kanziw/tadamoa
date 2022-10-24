@@ -13,6 +13,8 @@ jobs:
           node-version: 16.14.2
       - run: yarn build
 
+      - run: echo '${{ toJSON(github) }}'
+
       - id: karrotmini-deployment
         uses: karrotmini/deployment-site@1049cc6e7a258a086b0d08bc0a8fc02200d15076
         with:
