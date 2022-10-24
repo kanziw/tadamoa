@@ -20,4 +20,4 @@ jobs:
         with:
           api-key: ${{ secrets.KARROTMINI_API_KEY }}
           build-output-directory: ./build
-          preview-id: gh-pr-${{ github.pull_request.number }}
+          preview-id: gh-pr-${{ github.event.pull_request.number }}
