@@ -13,7 +13,8 @@ jobs:
           node-version: 16.14.2
       - run: yarn build
 
-      - uses: kanziw/hello-github-actions-composite@9a1c977f3dacff96b2ce64abeb57a9c326b83963
+      - id: karrotmini-deployment
+        uses: kanziw/hello-github-actions-composite@9a1c977f3dacff96b2ce64abeb57a9c326b83963
         with:
           target-directory: ./build
 
@@ -33,5 +34,8 @@ jobs:
           body: |
             ## karrotmini deployment
 
-            Hello, I'm karrotmini. {{ github.sha }}
+            Hello, I'm karrotmini. ${{ github.sha }}
+
+            ${{ steps.karrotmini-deployment.outputs.o1 }}
+            ${{ steps.karrotmini-deployment.outputs.o2 }}
           edit-mode: replace
