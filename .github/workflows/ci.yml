@@ -14,7 +14,7 @@ jobs:
       - run: yarn build
 
       - id: karrotmini-deployment
-        uses: kanziw/hello-github-actions-composite@b4f37a30a1df0e99e1432c51592492d59a8bc21e
+        uses: kanziw/hello-github-actions-composite@92be7bb7c2c4f188c1c0e916300c7df450f642f6
         with:
           target-directory: ./build
           api-key: ${{ secrets.SAMPLE }}
