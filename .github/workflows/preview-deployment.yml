@@ -4,7 +4,7 @@ on:
 name: Preview Deployment
 
 jobs:
-  test:
+  preview-deployment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
