@@ -16,7 +16,7 @@ jobs:
       - run: echo '${{ toJSON(github) }}'
 
       - id: karrotmini-deployment
-        uses: karrotmini/deployment-site@1049cc6e7a258a086b0d08bc0a8fc02200d15076
+        uses: karrotmini/deployment-site@add-preview-deployment-actions
         with:
           api-key: ${{ secrets.KARROTMINI_API_KEY }}
           build-output-directory: ./build
