@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 16.14.2
       - run: yarn build
 
       - uses: kanziw/hello-github-actions-composite@9a1c977f3dacff96b2ce64abeb57a9c326b83963
@@ -25,7 +25,7 @@ jobs:
           comment-author: 'karrotmini'
           body-includes: '## karrotmini deployment'
 
-      - name: Upsert DDL diff comment
+      - name: Upsert Result
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
