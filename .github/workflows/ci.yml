@@ -25,7 +25,7 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'karrotmini'
-          body-includes: karrotmini deployment on ${{ github.sha }}
+          body-includes: karrotmini deployment on ${{ github.before }}
 
       - name: Upsert Result
         uses: peter-evans/create-or-update-comment@v1
@@ -33,7 +33,7 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            ## karrotmini deployment on ${{ github.sha }}
+            ## karrotmini deployment on ${{ github.after }}
 
             Hello, I'm karrotmini.
 
