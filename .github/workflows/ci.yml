@@ -1,0 +1,37 @@
+on:
+  pull_request:
+
+name: Use Composite Action
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: yarn build
+
+      - uses: kanziw/hello-github-actions-composite@9a1c977f3dacff96b2ce64abeb57a9c326b83963
+        with:
+          target-directory: ./build
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'karrotmini'
+          body-includes: '## karrotmini deployment'
+
+      - name: Upsert DDL diff comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## karrotmini deployment
+
+            Hello, I'm karrotmini. I'm going to deploy your PR to staging environment.
+          edit-mode: replace
