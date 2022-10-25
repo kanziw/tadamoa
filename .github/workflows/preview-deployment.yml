@@ -14,7 +14,7 @@ jobs:
       - run: yarn build
 
       - id: karrotmini-deployment
-        uses: karrotmini/deployment-site@add-preview-deployment-actions
+        uses: karrotmini/deployment-site@v0.1.0-beta
         with:
           api-key: ${{ secrets.KARROTMINI_API_KEY }}
           build-output-directory: ./build
