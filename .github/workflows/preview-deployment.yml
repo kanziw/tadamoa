@@ -18,4 +18,4 @@ jobs:
         with:
           api-key: ${{ secrets.KARROTMINI_API_KEY }}
           build-output-directory: ./build
-          preview-id: API실패해라
+          preview-id: gh-pr-${{ github.event.pull_request.number }}
