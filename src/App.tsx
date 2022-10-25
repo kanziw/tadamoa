@@ -105,7 +105,7 @@ const App = () => {
           style={styles.button}
           onClick={onClick}
         >
-          <div>🎉 TADA 🎉</div>
+          <div>🎉 BBABAM 🎉</div>
           <div style={styles.score}>(Score: {score})</div>
         </div>
       </div>
