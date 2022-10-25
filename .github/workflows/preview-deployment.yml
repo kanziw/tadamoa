@@ -17,5 +17,5 @@ jobs:
         uses: karrotmini/deployment-site@add-preview-deployment-actions
         with:
           api-key: ${{ secrets.KARROTMINI_API_KEY }}
-          build-output-directory: ./unknown
-          preview-id: gh-pr-${{ github.event.pull_request.number }}
+          build-output-directory: ./build
+          preview-id: API실패해라
