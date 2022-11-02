@@ -14,8 +14,8 @@ jobs:
       - run: yarn build
 
       - id: karrotmini-deployment
-        uses: karrotmini/deployment-site@handle-failure-message
+        uses: karrotmini/deployment-site@v0.2.0-beta
         with:
-          api-key: ${{ secrets.KARROTMINI_API_KEY }}
+          api-key: INVALID_API_KEY
           build-output-directory: ./build
           preview-id: gh-pr-${{ github.event.pull_request.number }}
