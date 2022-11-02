@@ -14,8 +14,9 @@ jobs:
       - run: yarn build
 
       - id: karrotmini-deployment
-        uses: karrotmini/deployment-site@v0.1.0-beta
+        uses: karrotmini/deployment-site@handle-failure-message
         with:
-          api-key: ${{ secrets.KARROTMINI_API_KEY }}
+          api-key: ${{ secrets.KARROTMINI_API_KEY_TEST }}
           build-output-directory: ./build
           preview-id: gh-pr-${{ github.event.pull_request.number }}
+          bundle-upload-http-endpoint: https://6e04-211-244-135-48.ngrok.io/console/miniapps/bundle/upload-preview
