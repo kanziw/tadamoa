@@ -19,3 +19,11 @@ jobs:
           api-key: ${{ secrets.KARROTMINI_API_KEY }}
           build-output-directory: ./build
           preview-id: gh-pr-${{ github.event.pull_request.number }}
+
+      - id: karrotmini-deployment (alpha)
+        uses: karrotmini/deployment-site@beta
+        with:
+          api-key: ${{ secrets.KARROTMINI_API_KEY_TEST }}
+          build-output-directory: ./build
+          preview-id: gh-pr-${{ github.event.pull_request.number }}
+          bundle-upload-http-endpoint: https://mini.alpha.kr.karrotmarket.com/console/miniapps/bundle/upload-preview
